@@ -15,6 +15,8 @@ Entity::Entity(
 void Entity::Update(const sf::Event &event) {
     switch (event.type) {
     case sf::Event::KeyPressed:
+        heldKeys.insert(event.key.code);
+
         switch (event.key.code) {
         case sf::Keyboard::Left:
             controller.x = -1;
@@ -39,21 +41,23 @@ void Entity::Update(const sf::Event &event) {
         break;
 
     case sf::Event::KeyReleased:
+        heldKeys.erase(event.key.code);
+
         switch (event.key.code) {
         case sf::Keyboard::Left:
-            controller.x = 0;
+            controller.x = heldKeys.count(sf::Keyboard::Right) ? 1 : 0;
             break;
 
         case sf::Keyboard::Right:
-            controller.x = 0;
+            controller.x = heldKeys.count(sf::Keyboard::Left) ? -1 : 0;
             break;
 
         case sf::Keyboard::Up:
-            controller.y = 0;
+            controller.y = heldKeys.count(sf::Keyboard::Down) ? 1 : 0;
             break;
 
         case sf::Keyboard::Down:
-            controller.y = 0;
+            controller.y = heldKeys.count(sf::Keyboard::Up) ? -1 : 0;
             break;
 
         default:
@@ -120,6 +124,8 @@ sf::Vector2f Entity::getTransform() {
 }
 
 void Entity::Reset() {
+    heldKeys.clear();
+
     controller.x = 0;
     controller.y = 0;
 }
