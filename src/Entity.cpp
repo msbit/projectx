@@ -17,19 +17,19 @@ void Entity::Update(const sf::Event &event) {
     case sf::Event::KeyPressed:
         switch (event.key.code) {
         case sf::Keyboard::Left:
-            controller = sf::Vector2f(-1, 0);
+            controller.x = -1;
             break;
 
         case sf::Keyboard::Right:
-            controller = sf::Vector2f(1, 0);
+            controller.x = 1;
             break;
 
         case sf::Keyboard::Up:
-            controller = sf::Vector2f(0, -1);
+            controller.y = -1;
             break;
 
         case sf::Keyboard::Down:
-            controller = sf::Vector2f(0 , 1);
+            controller.y = 1;
             break;
 
         default:
@@ -39,7 +39,27 @@ void Entity::Update(const sf::Event &event) {
         break;
 
     case sf::Event::KeyReleased:
-        controller = sf::Vector2f(0 , 0);
+        switch (event.key.code) {
+        case sf::Keyboard::Left:
+            controller.x = 0;
+            break;
+
+        case sf::Keyboard::Right:
+            controller.x = 0;
+            break;
+
+        case sf::Keyboard::Up:
+            controller.y = 0;
+            break;
+
+        case sf::Keyboard::Down:
+            controller.y = 0;
+            break;
+
+        default:
+            break;
+        }
+
         break;
 
     default:
