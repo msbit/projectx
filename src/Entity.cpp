@@ -13,24 +13,37 @@ Entity::Entity(
 ) : speed(speed), acceleration(acceleration), animations(animations) {}
 
 void Entity::Update(const sf::Event &event) {
-    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left) {
-        controller = sf::Vector2f(-1, 0);
-    }
+    switch (event.type) {
+    case sf::Event::KeyPressed:
+        switch (event.key.code) {
+        case sf::Keyboard::Left:
+            controller = sf::Vector2f(-1, 0);
+            break;
 
-    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right) {
-        controller = sf::Vector2f(1, 0);
-    }
+        case sf::Keyboard::Right:
+            controller = sf::Vector2f(1, 0);
+            break;
 
-    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up) {
-        controller = sf::Vector2f(0, -1);
-    }
+        case sf::Keyboard::Up:
+            controller = sf::Vector2f(0, -1);
+            break;
 
-    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down) {
-        controller = sf::Vector2f(0 , 1);
-    }
+        case sf::Keyboard::Down:
+            controller = sf::Vector2f(0 , 1);
+            break;
 
-    if (event.type == sf::Event::KeyReleased) {
+        default:
+            break;
+        }
+
+        break;
+
+    case sf::Event::KeyReleased:
         controller = sf::Vector2f(0 , 0);
+        break;
+
+    default:
+        break;
     }
 
 }
