@@ -3,12 +3,13 @@
 
 #include "HouseScene.h"
 
-HouseScene::HouseScene(std::shared_ptr<AssetWatcher> asset_watcher,
-                           std::vector<std::shared_ptr<TimedController>> timed_controllers,
-                           ViewLayerMap view_layers, AnimationMap animations,
-                           std::shared_ptr<HouseSceneReducer> reducer)
-        : asset_watcher(asset_watcher), timed_controllers(timed_controllers),
-          view_layers(view_layers), animations(animations), reducer(reducer) {}
+HouseScene::HouseScene(
+    std::shared_ptr<AssetWatcher> asset_watcher,
+    std::vector<std::shared_ptr<TimedController>> timed_controllers,
+    ViewLayerMap view_layers, AnimationMap animations,
+    std::shared_ptr<HouseSceneReducer> reducer)
+    : asset_watcher(asset_watcher), timed_controllers(timed_controllers),
+      view_layers(view_layers), animations(animations), reducer(reducer) {}
 
 void HouseScene::HandleInput(const EventWithMouse &event) {
     for (auto &timed_controller : timed_controllers)
@@ -21,7 +22,7 @@ void HouseScene::Update() {
 
     for (auto &timed_controller : timed_controllers)
         timed_controller->controller->Update(*reducer,
-                                            timed_controller->timer.restart());
+                                             timed_controller->timer.restart());
 
     for (auto &animation : *animations)
         animation.second.Update();

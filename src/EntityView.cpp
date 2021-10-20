@@ -57,20 +57,21 @@ void EntityView::Draw(sf::RenderTarget &target,
             DrawPoint(entity.transform, target);
         }
     }
-
 }
 
 void EntityView::DrawHitBoxes(Entity &entity, sf::RenderTarget &target) const {
     for (auto hitbox : entity.hitboxes) {
         auto shape = sf::RectangleShape();
         shape.setSize(sf::Vector2f(hitbox.width, hitbox.height));
-        shape.setPosition(entity.transform - sf::Vector2f(hitbox.width / 2, hitbox.height /2));
+        shape.setPosition(entity.transform -
+                          sf::Vector2f(hitbox.width / 2, hitbox.height / 2));
         shape.setFillColor(sf::Color(0, 255, 0, 128));
         target.draw(shape);
     }
 }
 
-void EntityView::DrawPoint(sf::Vector2f& position, sf::RenderTarget& target) const {
+void EntityView::DrawPoint(sf::Vector2f &position,
+                           sf::RenderTarget &target) const {
     auto circle_shape = sf::CircleShape(5);
     circle_shape.setFillColor(sf::Color::Red);
     circle_shape.setPosition(position - sf::Vector2f(2.5f, 2.5f));

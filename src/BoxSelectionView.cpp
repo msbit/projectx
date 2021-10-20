@@ -1,5 +1,6 @@
-#include "BoxSelectionView.h"
 #include <SFML/Graphics.hpp>
+
+#include "BoxSelectionView.h"
 
 void BoxSelectionView::Draw(sf::RenderTarget &render_target,
                             const HouseSceneState &state) const {

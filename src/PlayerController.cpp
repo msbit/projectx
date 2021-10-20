@@ -1,5 +1,6 @@
-#include "PlayerController.h"
 #include <cmath>
+
+#include "PlayerController.h"
 
 PlayerController::PlayerController(
     std::shared_ptr<std::unordered_map<EntityState, Animation>> animations,

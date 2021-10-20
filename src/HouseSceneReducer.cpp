@@ -1,5 +1,6 @@
-#include "HouseSceneReducer.h"
 #include <math.h>
+
+#include "HouseSceneReducer.h"
 
 const HouseSceneState &HouseSceneReducer::GetState() { return state; }
 
@@ -179,7 +180,8 @@ void HouseSceneReducer::SetPlayerDirection(sf::Vector2f new_direction) {
         }
     }
 
-    // First if the player has requested to loot something they are facing and close enough to
+    // First if the player has requested to loot something they are facing and
+    // close enough to
     auto angle = atan2f(new_direction.y, new_direction.x) * 180 / 3.1416;
 
     if (angle < 0) {

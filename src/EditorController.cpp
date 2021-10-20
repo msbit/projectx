@@ -1,6 +1,6 @@
+#include <math.h>
 
 #include "EditorController.h"
-#include <math.h>
 
 EditorController::EditorController(
     int tile_map_sprite_size, sf::RenderTexture &tile_palette_render_texture,

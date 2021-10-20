@@ -1,6 +1,6 @@
 #include "GridView.h"
 
-GridView::GridView(int size, Map& map) : size(size), map(map) {}
+GridView::GridView(int size, Map &map) : size(size), map(map) {}
 
 void GridView::Draw(sf::RenderTarget &target,
                     const HouseSceneState &state) const {

@@ -1,6 +1,8 @@
-#include "HouseSceneFactory.h"
-#include <SFML/Graphics.hpp>
 #include <optional>
+
+#include <SFML/Graphics.hpp>
+
+#include "HouseSceneFactory.h"
 
 int main(int argc, char **argv) {
     int window_width = 1920;
@@ -12,11 +14,8 @@ int main(int argc, char **argv) {
     std::optional map_path_optional =
         argc == 2 ? std::optional<std::string>{argv[1]} : std::nullopt;
 
-    auto current_scene = HouseSceneFactory::Init(
-        window_height, 
-        window_width,
-        map_path_optional
-    );
+    auto current_scene =
+        HouseSceneFactory::Init(window_height, window_width, map_path_optional);
 
     while (window.isOpen()) {
         sf::Event event;

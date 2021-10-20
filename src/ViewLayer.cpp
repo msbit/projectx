@@ -1,10 +1,12 @@
 #include "ViewLayer.h"
 
-ViewLayer::ViewLayer(sf::IntRect texture_size, sf::View view) : texture_size(texture_size), view(view) {
+ViewLayer::ViewLayer(sf::IntRect texture_size, sf::View view)
+    : texture_size(texture_size), view(view) {
     render_texture.create(texture_size.width, texture_size.height);
 }
 
-void ViewLayer::Draw(sf::RenderTarget &render_target, const HouseSceneState &house_scene_state) {
+void ViewLayer::Draw(sf::RenderTarget &render_target,
+                     const HouseSceneState &house_scene_state) {
     render_texture.setView(view);
     render_texture.clear();
     for (auto &view : views) {

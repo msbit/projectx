@@ -1,16 +1,18 @@
 #include <fstream>
 #include <unordered_map>
 
-#include "Map.h"
 #include "EntityFactory.h"
+#include "Map.h"
 
-Map::Map(HouseSceneReducer &reducer, std::shared_ptr<Screen> screen, int map_tile_pixel_count,
-         sf::IntRect map_bounds)
+Map::Map(HouseSceneReducer &reducer, std::shared_ptr<Screen> screen,
+         int map_tile_pixel_count, sf::IntRect map_bounds)
     : reducer(reducer), screen(screen),
       map_tile_pixel_count(map_tile_pixel_count), map_bounds(map_bounds) {}
 
-Map::Map(HouseSceneReducer &reducer, std::string file_name, std::shared_ptr<Screen> screen, int map_tile_pixel_count)
-    : reducer(reducer), screen(screen), map_tile_pixel_count(map_tile_pixel_count) {
+Map::Map(HouseSceneReducer &reducer, std::string file_name,
+         std::shared_ptr<Screen> screen, int map_tile_pixel_count)
+    : reducer(reducer), screen(screen),
+      map_tile_pixel_count(map_tile_pixel_count) {
     std::ifstream rf(file_name, std::ios::in | std::ios::binary);
 
     if (!rf) {
@@ -103,9 +105,10 @@ void Map::WriteToFile(std::string file_name) const {
         exit(1);
     }
 
-
-    wf.write(reinterpret_cast<const char *>(&map_bounds.left), sizeof(map_bounds.left));
-    wf.write(reinterpret_cast<const char *>(&map_bounds.top), sizeof(map_bounds.top));
+    wf.write(reinterpret_cast<const char *>(&map_bounds.left),
+             sizeof(map_bounds.left));
+    wf.write(reinterpret_cast<const char *>(&map_bounds.top),
+             sizeof(map_bounds.top));
     wf.write(reinterpret_cast<const char *>(&map_bounds.width),
              sizeof(map_bounds.width));
     wf.write(reinterpret_cast<const char *>(&map_bounds.height),
@@ -159,8 +162,10 @@ void Map::WriteToFile(std::string file_name) const {
     for (auto room : reducer.GetState().rooms) {
         wf.write(reinterpret_cast<const char *>(&room.left), sizeof(room.left));
         wf.write(reinterpret_cast<const char *>(&room.top), sizeof(room.top));
-        wf.write(reinterpret_cast<const char *>(&room.height), sizeof(room.height));
-        wf.write(reinterpret_cast<const char *>(&room.width), sizeof(room.width));
+        wf.write(reinterpret_cast<const char *>(&room.height),
+                 sizeof(room.height));
+        wf.write(reinterpret_cast<const char *>(&room.width),
+                 sizeof(room.width));
     }
 }
 
@@ -170,4 +175,4 @@ const sf::FloatRect Map::RoomGridToWorld(sf::IntRect room) const {
                          room.width * sprite_size, room.height * sprite_size);
 }
 
-const sf::IntRect Map::GetBounds() const { return map_bounds; } 
+const sf::IntRect Map::GetBounds() const { return map_bounds; }

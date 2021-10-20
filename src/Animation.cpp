@@ -1,9 +1,11 @@
-#include "Animation.h"
 #include <vector>
+
+#include "Animation.h"
 
 Animation::Animation(const std::shared_ptr<SpriteSheet> sprite_sheet,
                      std::vector<AnimationFrame> animation_frames,
-                     int frame_width, int frame_height, int speed, const std::shared_ptr<Screen> screen)
+                     int frame_width, int frame_height, int speed,
+                     const std::shared_ptr<Screen> screen)
     : animation_frames(animation_frames), current_frame_counter(0),
       frame_height(frame_height), frame_width(frame_width), speed(speed),
       sprite_sheet(sprite_sheet), screen(screen) {

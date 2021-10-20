@@ -1,6 +1,8 @@
 #include "TilePaletteView.h"
 
-TilePaletteView::TilePaletteView(int width, int height, std::shared_ptr<Screen> screen) : screen(screen) {
+TilePaletteView::TilePaletteView(int width, int height,
+                                 std::shared_ptr<Screen> screen)
+    : screen(screen) {
     tile_palette_render_texture.create(width, height);
 }
 
