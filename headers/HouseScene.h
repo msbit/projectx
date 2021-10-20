@@ -1,11 +1,18 @@
 #pragma once
 
+#include <map>
+#include <memory>
+#include <string>
 #include <unordered_map>
+#include <vector>
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Clock.hpp>
 
+#include "Animation.h"
 #include "AssetWatcher.h"
 #include "Controller.h"
+#include "Entity.h"
 #include "EventWithMouse.h"
 #include "HouseSceneReducer.h"
 #include "ViewLayer.h"

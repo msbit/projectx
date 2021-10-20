@@ -1,6 +1,7 @@
 #pragma once
 
-#include <SFML/Window.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
 
 struct EventWithMouse {
     const sf::Event &event;

@@ -1,7 +1,16 @@
 #pragma once
 
+#include <memory>
+#include <unordered_map>
+
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Vector2.hpp>
+
+#include "Animation.h"
 #include "Entity.h"
-#include "HouseScene.h"
+#include "HouseSceneState.h"
+#include "SpriteSheet.h"
+#include "View.h"
 
 class EntityView : public View<HouseSceneState> {
     const std::weak_ptr<std::unordered_map<EntityState, Animation>> animations;

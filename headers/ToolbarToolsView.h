@@ -1,6 +1,12 @@
 #pragma once
 
+#include <memory>
+
+#include <SFML/Graphics/RenderTarget.hpp>
+
 #include "HouseSceneState.h"
+#include "Screen.h"
+#include "SpriteSheet.h"
 #include "View.h"
 
 class ToolbarToolsView : public View<HouseSceneState> {

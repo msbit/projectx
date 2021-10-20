@@ -1,7 +1,12 @@
 #pragma once
 
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Entity.h"
 #include "HouseSceneState.h"
+#include "TileLayer.h"
+#include "TilePaletteTile.h"
 
 class HouseSceneReducer {
     HouseSceneState state;

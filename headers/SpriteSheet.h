@@ -1,9 +1,13 @@
 #pragma once
 
-#include <iostream>
 #include <memory>
+#include <string>
+#include <vector>
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
 
 #include "Screen.h"
 

@@ -1,6 +1,13 @@
 #pragma once
 
 #include <memory>
+#include <vector>
+
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/System/Vector2.hpp>
 
 #include "HouseSceneState.h"
 #include "View.h"

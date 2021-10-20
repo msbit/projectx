@@ -1,9 +1,14 @@
 #pragma once
 
+#include <memory>
+
+#include <SFML/Graphics/RenderTexture.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Controller.h"
 #include "EventWithMouse.h"
 #include "HouseSceneReducer.h"
-#include "HouseSceneState.h"
 #include "Map.h"
 #include "Screen.h"
 #include "ViewLayer.h"

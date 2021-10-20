@@ -1,6 +1,9 @@
 #pragma once
 
 #include <memory>
+#include <vector>
+
+#include <SFML/Graphics/Sprite.hpp>
 
 #include "Screen.h"
 #include "SpriteSheet.h"

@@ -1,6 +1,9 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <memory>
+#include <string>
+
+#include <SFML/Graphics/Rect.hpp>
 
 #include "HouseSceneReducer.h"
 #include "Screen.h"

@@ -1,11 +1,18 @@
 #pragma once
 
+#include <memory>
 #include <optional>
+#include <string>
+#include <vector>
+
+#include <SFML/Graphics/Rect.hpp>
 
 #include "AssetWatcher.h"
 #include "ControllerScheme.h"
 #include "HouseScene.h"
+#include "HouseSceneReducer.h"
 #include "Map.h"
+#include "Screen.h"
 
 class HouseSceneFactory {
     static std::shared_ptr<AssetWatcher>

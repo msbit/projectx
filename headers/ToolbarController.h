@@ -1,6 +1,11 @@
 #pragma once
 
+#include <memory>
+
+#include <SFML/System/Time.hpp>
+
 #include "Controller.h"
+#include "EventWithMouse.h"
 #include "HouseSceneReducer.h"
 #include "Screen.h"
 

@@ -1,6 +1,11 @@
 #pragma once
 
+#include <memory>
+
+#include <SFML/Graphics/RenderTarget.hpp>
+
 #include "HouseSceneState.h"
+#include "SpriteSheet.h"
 #include "View.h"
 
 class TileBackgroundView : public View<HouseSceneState> {
