@@ -42,7 +42,7 @@ struct HouseSceneState {
     std::vector<Entity> entities;
     std::vector<TileLayer> tile_layers;
     std::vector<Item> player_items;
-    //sf::IntRect map_bounds;
+    // sf::IntRect map_bounds;
     // sf::View house_view;
     HouseSceneEditorState editor_state;
     // int window_width;

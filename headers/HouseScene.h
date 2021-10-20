@@ -1,14 +1,14 @@
 #pragma once
 
-
-#include <SFML/Graphics.hpp>
 #include <unordered_map>
 
+#include <SFML/Graphics.hpp>
+
+#include "AssetWatcher.h"
+#include "Controller.h"
 #include "EventWithMouse.h"
 #include "HouseSceneReducer.h"
 #include "ViewLayer.h"
-#include "AssetWatcher.h"
-#include "Controller.h"
 
 typedef std::map<std::string, std::shared_ptr<ViewLayer>> ViewLayerMap;
 
@@ -28,8 +28,10 @@ class HouseScene {
     ViewLayerMap view_layers;
     AnimationMap animations;
     std::shared_ptr<HouseSceneReducer> reducer;
+
   public:
-    HouseScene(std::shared_ptr<AssetWatcher>, std::vector<std::shared_ptr<TimedController>>, ViewLayerMap,
+    HouseScene(std::shared_ptr<AssetWatcher>,
+               std::vector<std::shared_ptr<TimedController>>, ViewLayerMap,
                AnimationMap, std::shared_ptr<HouseSceneReducer>);
     void HandleInput(const EventWithMouse &);
     void Update();

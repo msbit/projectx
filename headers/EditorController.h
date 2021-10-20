@@ -15,8 +15,8 @@ class EditorController : public Controller<HouseSceneReducer> {
     sf::Vector2i last_mouse_position;
     Map &map;
     std::shared_ptr<Screen> screen;
-    ViewLayer& house_view_layer;
-    ViewLayer& tile_palette_view;
+    ViewLayer &house_view_layer;
+    ViewLayer &tile_palette_view;
 
     void HandleInputBoxSelection(const EventWithMouse &, HouseSceneReducer &);
 

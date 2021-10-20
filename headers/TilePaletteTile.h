@@ -1,5 +1,8 @@
-#include "Entity.h"
+#pragma once
+
 #include <SFML/Graphics.hpp>
+
+#include "Entity.h"
 
 enum class TilePaletteType { PaletteTile, PaletteEntity };
 

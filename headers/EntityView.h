@@ -6,8 +6,8 @@
 class EntityView : public View<HouseSceneState> {
     const std::weak_ptr<std::unordered_map<EntityState, Animation>> animations;
     const std::shared_ptr<SpriteSheet> entity_sprite_sheet;
-    void DrawHitBoxes(Entity&, sf::RenderTarget&) const;
-    void DrawPoint(sf::Vector2f&, sf::RenderTarget&) const;
+    void DrawHitBoxes(Entity &, sf::RenderTarget &) const;
+    void DrawPoint(sf::Vector2f &, sf::RenderTarget &) const;
 
   public:
     EntityView(const std::shared_ptr<SpriteSheet>,

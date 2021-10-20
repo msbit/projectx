@@ -1,8 +1,9 @@
 #pragma once
 
+#include <memory>
+
 #include "HouseSceneState.h"
 #include "View.h"
-#include <memory>
 
 class ViewLayer {
     std::vector<std::unique_ptr<View<HouseSceneState>>> views;

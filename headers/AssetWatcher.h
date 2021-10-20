@@ -1,7 +1,7 @@
 #pragma once
 
-#include <map>
 #include <atomic>
+#include <map>
 #include <string>
 #include <thread>
 

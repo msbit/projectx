@@ -1,8 +1,9 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include "HouseScene.h"
 #include "View.h"
-#include <SFML/Graphics.hpp>
 
 class ShadowView : public View<HouseSceneState> {
     sf::Shader frag_shader;

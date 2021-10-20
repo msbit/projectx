@@ -3,29 +3,35 @@
 #include <optional>
 
 #include "AssetWatcher.h"
-#include "HouseScene.h"
 #include "ControllerScheme.h"
+#include "HouseScene.h"
 #include "Map.h"
 
 class HouseSceneFactory {
-    static std::shared_ptr<AssetWatcher> InitAssetWatcher(int, int, std::shared_ptr<Screen>);
+    static std::shared_ptr<AssetWatcher>
+    InitAssetWatcher(int, int, std::shared_ptr<Screen>);
 
     static std::shared_ptr<Screen> InitScreen(const int, const int, const int);
 
-    static AnimationMap InitAnimations(std::shared_ptr<AssetWatcher>, std::shared_ptr<Screen>);
+    static AnimationMap InitAnimations(std::shared_ptr<AssetWatcher>,
+                                       std::shared_ptr<Screen>);
 
-    static ViewLayerMap InitViewLayers(std::shared_ptr<AssetWatcher>, std::shared_ptr<Screen>,
-                                       AnimationMap, sf::IntRect, Map &);
+    static ViewLayerMap InitViewLayers(std::shared_ptr<AssetWatcher>,
+                                       std::shared_ptr<Screen>, AnimationMap,
+                                       sf::IntRect, Map &);
 
     static std::vector<std::shared_ptr<TimedController>>
-    InitControllers(std::shared_ptr<AssetWatcher>, AnimationMap, std::shared_ptr<Screen>,
-                    std::shared_ptr<Map>, ViewLayerMap);
+        InitControllers(std::shared_ptr<AssetWatcher>, AnimationMap,
+                        std::shared_ptr<Screen>, std::shared_ptr<Map>,
+                        ViewLayerMap);
 
     static std::shared_ptr<ControllerScheme> InitControllerScheme();
 
     static std::shared_ptr<Map> InitMap(const std::optional<std::string>,
-                                        HouseSceneReducer &, std::shared_ptr<Screen>, int);
+                                        HouseSceneReducer &,
+                                        std::shared_ptr<Screen>, int);
 
- public:
-    static std::unique_ptr<HouseScene> Init(const int, const int, const std::optional<std::string>);
+  public:
+    static std::unique_ptr<HouseScene> Init(const int, const int,
+                                            const std::optional<std::string>);
 };

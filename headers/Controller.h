@@ -1,7 +1,8 @@
 #pragma once
 
-#include "EventWithMouse.h"
 #include <SFML/Graphics.hpp>
+
+#include "EventWithMouse.h"
 
 template <typename T> class Controller {
   public:

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <HouseScene.h>
 
 class LightingView : public View<HouseSceneState> {

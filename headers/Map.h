@@ -1,7 +1,8 @@
 #pragma once
 
-#include "HouseSceneReducer.h"
 #include <SFML/Graphics.hpp>
+
+#include "HouseSceneReducer.h"
 #include "Screen.h"
 
 // A map holds all data for a given tile layout within the game.
@@ -12,8 +13,8 @@ class Map {
     sf::IntRect map_bounds;
 
   public:
-    Map(HouseSceneReducer&, std::shared_ptr<Screen>, int, sf::IntRect);
-    Map(HouseSceneReducer&, std::string, std::shared_ptr<Screen>, int);
+    Map(HouseSceneReducer &, std::shared_ptr<Screen>, int, sf::IntRect);
+    Map(HouseSceneReducer &, std::string, std::shared_ptr<Screen>, int);
     void WriteToFile(std::string) const;
     const sf::FloatRect RoomGridToWorld(sf::IntRect) const;
     const sf::IntRect GetBounds() const;

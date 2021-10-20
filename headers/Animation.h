@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "SpriteSheet.h"
 #include "Screen.h"
+#include "SpriteSheet.h"
 
 struct AnimationFrame {
     int x;
@@ -21,6 +21,7 @@ class Animation {
 
   public:
     sf::Sprite sprite;
-    Animation(const std::shared_ptr<SpriteSheet>, std::vector<AnimationFrame>, int, int, int, const std::shared_ptr<Screen>);
+    Animation(const std::shared_ptr<SpriteSheet>, std::vector<AnimationFrame>,
+              int, int, int, const std::shared_ptr<Screen>);
     void Update();
 };
