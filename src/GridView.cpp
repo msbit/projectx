@@ -1,3 +1,8 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/PrimitiveType.hpp>
+#include <SFML/Graphics/Vertex.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "GridView.h"
 
 GridView::GridView(int size, Map &map) : size(size), map(map) {}

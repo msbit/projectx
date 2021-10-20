@@ -1,8 +1,16 @@
+#include <algorithm>
 #include <fstream>
-#include <unordered_map>
+#include <ios>
+#include <iostream>
+#include <vector>
 
-#include "EntityFactory.h"
+#include <SFML/System/Vector2.hpp>
+
 #include "Map.h"
+
+#include "Entity.h"
+#include "EntityFactory.h"
+#include "TileLayer.h"
 
 Map::Map(HouseSceneReducer &reducer, std::shared_ptr<Screen> screen,
          int map_tile_pixel_count, sf::IntRect map_bounds)

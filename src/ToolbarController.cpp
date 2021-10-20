@@ -1,3 +1,6 @@
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Mouse.hpp>
+
 #include "ToolbarController.h"
 
 ToolbarController::ToolbarController(std::shared_ptr<Screen> screen)

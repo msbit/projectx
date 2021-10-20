@@ -1,5 +1,12 @@
+#include <algorithm>
+#include <type_traits>
+
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "EntityView.h"
-#include "Animation.h"
 
 typedef std::underlying_type<EntityType>::type utype;
 

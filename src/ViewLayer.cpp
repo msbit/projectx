@@ -1,3 +1,7 @@
+#include <utility>
+
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "ViewLayer.h"
 
 ViewLayer::ViewLayer(sf::IntRect texture_size, sf::View view)

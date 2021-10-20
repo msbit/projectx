@@ -1,3 +1,5 @@
+#include <SFML/Graphics/Rect.hpp>
+
 #include "EntityFactory.h"
 
 Entity EntityFactory::Player(sf::Vector2f position) {

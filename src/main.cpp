@@ -1,7 +1,15 @@
 #include <optional>
+#include <string>
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Mouse.hpp>
+#include <SFML/Window/VideoMode.hpp>
 
+#include "EventWithMouse.h"
 #include "HouseSceneFactory.h"
 
 int main(int argc, char **argv) {

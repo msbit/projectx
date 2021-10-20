@@ -1,3 +1,9 @@
+#include <iostream>
+
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "SpriteSheet.h"
 
 // For now we will assume that this is a constructor for a sprite sheet from a

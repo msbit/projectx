@@ -1,3 +1,9 @@
+#include <cstdlib>
+#include <iostream>
+
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "ShadowView.h"
 
 ShadowView::ShadowView(sf::IntRect map_size) {

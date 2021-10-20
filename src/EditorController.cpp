@@ -1,4 +1,11 @@
-#include <math.h>
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Mouse.hpp>
 
 #include "EditorController.h"
 
@@ -88,8 +95,8 @@ void EditorController::HandleInput(const EventWithMouse &event_with_mouse,
             event_with_mouse.window_mouse_position);
 
         reducer.UpdateSelectedEditorSquare(sf::Vector2i(
-            floor(current_target_coords.x / tile_map_sprite_size),
-            floor(current_target_coords.y / tile_map_sprite_size)));
+            std::floor(current_target_coords.x / tile_map_sprite_size),
+            std::floor(current_target_coords.y / tile_map_sprite_size)));
     }
 
     if (event_with_mouse.event.type == sf::Event::MouseButtonReleased &&

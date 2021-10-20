@@ -1,26 +1,35 @@
-#include <optional>
-#include <vector>
+#include <algorithm>
+#include <unordered_map>
 
-#include "AssetWatcher.h"
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Joystick.hpp>
+
+#include "HouseSceneFactory.h"
+
+#include "Animation.h"
 #include "BoxSelectionView.h"
-#include "ControllerScheme.h"
 #include "CreatedRoomSelectionView.h"
 #include "EditorController.h"
+#include "Entity.h"
 #include "EntityFactory.h"
 #include "EntityView.h"
 #include "GamepadControllerScheme.h"
 #include "GridSelectionView.h"
 #include "GridView.h"
-#include "HouseSceneFactory.h"
+#include "HouseSceneState.h"
 #include "KeyboardControllerScheme.h"
 #include "PlayerController.h"
 #include "SelectedTileView.h"
 #include "ShadowView.h"
 #include "SpriteSheet.h"
 #include "TileBackgroundView.h"
+#include "TilePaletteTile.h"
 #include "TilePaletteView.h"
 #include "ToolbarController.h"
 #include "ToolbarToolsView.h"
+#include "ViewLayer.h"
 
 std::unique_ptr<HouseScene>
 HouseSceneFactory::Init(const int screen_height, const int screen_width,

@@ -1,5 +1,3 @@
-#include <vector>
-
 #include "Animation.h"
 
 Animation::Animation(const std::shared_ptr<SpriteSheet> sprite_sheet,

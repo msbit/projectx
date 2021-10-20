@@ -1,3 +1,7 @@
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+
 #include "KeyboardControllerScheme.h"
 
 ControllerSchemeState KeyboardControllerScheme::GetInput(

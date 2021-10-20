@@ -1,3 +1,7 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "CreatedRoomSelectionView.h"
 
 void CreatedRoomSelectionView::Draw(sf::RenderTarget &render_target,

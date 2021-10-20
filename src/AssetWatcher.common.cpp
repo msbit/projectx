@@ -1,6 +1,3 @@
-#include <filesystem>
-#include <iostream>
-
 #include "AssetWatcher.h"
 
 AssetWatcher::AssetWatcher(int scale)

@@ -1,3 +1,5 @@
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "TileBackgroundView.h"
 
 TileBackgroundView::TileBackgroundView(std::shared_ptr<SpriteSheet> tile_map)

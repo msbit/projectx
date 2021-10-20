@@ -1,6 +1,3 @@
-#include <memory>
-#include <unordered_map>
-
 #include "HouseScene.h"
 
 HouseScene::HouseScene(

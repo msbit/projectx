@@ -1,3 +1,5 @@
+#include <SFML/Graphics/Color.hpp>
+
 #include "SelectedTileView.h"
 
 SelectedTileView::SelectedTileView(std::shared_ptr<SpriteSheet> sprite_sheet)

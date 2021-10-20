@@ -1,4 +1,8 @@
-#include <math.h>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+
+#include <SFML/Graphics/Color.hpp>
 
 #include "HouseSceneReducer.h"
 
