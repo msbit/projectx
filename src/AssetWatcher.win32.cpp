@@ -4,11 +4,17 @@
 #include "AssetWatcher.h"
 
 AssetWatcher::AssetWatcher(int scale)
-    : watcher(&AssetWatcher::StartWatching, this), required_reload(false),
-      shutdown(false) {}
+    : required_reload(false), shutdown(false) {
+    if ((signal = CreateEvent(nullptr, FALSE, FALSE, nullptr)) == nullptr) {
+        exit(GetLastError());
+    }
+
+    watcher = std::thread(&AssetWatcher::StartWatching, this);
+}
 
 AssetWatcher::~AssetWatcher() {
     shutdown = true;
+    SetEvent(signal);
     watcher.join();
 }
 
@@ -22,8 +28,10 @@ void AssetWatcher::StartWatching() {
         exit(GetLastError());
     }
 
+    HANDLE handles[] = {change_handle, signal};
+
     while (!shutdown) {
-        auto wait_status = WaitForSingleObject(change_handle, 5000);
+        auto wait_status = WaitForMultipleObjects(2, handles, FALSE, 5000);
 
         if (wait_status == WAIT_OBJECT_0) {
             Sleep(10); // TODO : I think there is a race conidition here and the
@@ -33,6 +41,10 @@ void AssetWatcher::StartWatching() {
             if (FindNextChangeNotification(change_handle) == false) {
                 exit(GetLastError());
             }
+        }
+
+        if (wait_status == (WAIT_OBJECT_0 + 1)) {
+            break;
         }
     }
 

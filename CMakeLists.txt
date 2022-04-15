@@ -82,6 +82,7 @@ add_executable(ProjectX
 )
 
 if(WIN32)
+  add_definitions(-DWIN32)
   target_sources(ProjectX
     PRIVATE
     src/AssetWatcher.win32.cpp

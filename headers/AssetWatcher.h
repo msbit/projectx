@@ -5,6 +5,10 @@
 #include <string>
 #include <thread>
 
+#ifdef WIN32
+#include <windows.h>
+#endif
+
 #include "SpriteSheet.h"
 
 class AssetWatcher {
@@ -21,6 +25,10 @@ class AssetWatcher {
 
 #ifdef LINUX
     int signal;
+#endif
+
+#ifdef WIN32
+    HANDLE signal;
 #endif
 
   public:
