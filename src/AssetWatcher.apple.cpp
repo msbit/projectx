@@ -25,13 +25,13 @@ void AssetWatcher::StartWatching() {
 
     struct timespec wait = {5, 0};
     while (!shutdown) {
-        struct kevent event = {0};
+        struct kevent event = {};
         auto result = kevent(queue, nullptr, 0, &event, 1, &wait);
         if (result == -1) {
             exit(errno);
         }
 
-        if (result == 1 && event.ident == fd) {
+        if (result == 1 && event.ident == (uintptr_t)fd) {
             required_reload = true;
         }
     }
