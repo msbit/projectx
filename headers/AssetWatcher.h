@@ -15,6 +15,10 @@ class AssetWatcher {
     std::atomic<bool> required_reload;
     std::atomic<bool> shutdown;
 
+#ifdef APPLE
+    int queue;
+#endif
+
   public:
     void ReloadIfRequired();
     std::shared_ptr<SpriteSheet> GetSpriteSheet(std::string) const;

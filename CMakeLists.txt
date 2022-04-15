@@ -87,6 +87,7 @@ if(WIN32)
     src/AssetWatcher.win32.cpp
   )
 elseif(APPLE)
+  add_definitions(-DAPPLE)
   target_sources(ProjectX
     PRIVATE
     src/AssetWatcher.apple.cpp
