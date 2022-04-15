@@ -19,6 +19,10 @@ class AssetWatcher {
     int queue;
 #endif
 
+#ifdef LINUX
+    int signal;
+#endif
+
   public:
     void ReloadIfRequired();
     std::shared_ptr<SpriteSheet> GetSpriteSheet(std::string) const;

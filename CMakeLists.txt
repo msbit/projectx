@@ -93,6 +93,7 @@ elseif(APPLE)
     src/AssetWatcher.apple.cpp
   )
 elseif(CMAKE_SYSTEM_INFO_FILE STREQUAL "Platform/Linux")
+  add_definitions(-DLINUX)
   target_sources(ProjectX
     PRIVATE
     src/AssetWatcher.linux.cpp
