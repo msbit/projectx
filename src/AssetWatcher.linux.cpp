@@ -5,6 +5,15 @@
 
 #include "AssetWatcher.h"
 
+AssetWatcher::AssetWatcher(int scale)
+    : watcher(&AssetWatcher::StartWatching, this), required_reload(false),
+      shutdown(false) {}
+
+AssetWatcher::~AssetWatcher() {
+    shutdown = true;
+    watcher.join();
+}
+
 void AssetWatcher::StartWatching() {
     auto fd = inotify_init();
     if (fd == -1) {

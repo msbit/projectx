@@ -3,15 +3,6 @@
 
 #include "AssetWatcher.h"
 
-AssetWatcher::AssetWatcher(int scale)
-    : watcher(&AssetWatcher::StartWatching, this), required_reload(false),
-      shutdown(false) {}
-
-AssetWatcher::~AssetWatcher() {
-    shutdown = true;
-    watcher.join();
-}
-
 std::shared_ptr<SpriteSheet>
 AssetWatcher::GetSpriteSheet(std::string sprite_sheet_name) const {
     return sprite_sheets.at(sprite_sheet_name);
