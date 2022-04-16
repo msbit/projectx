@@ -4,7 +4,8 @@
 #include "AssetWatcher.h"
 
 AssetWatcher::AssetWatcher(int scale)
-    : watcher(&AssetWatcher::StartWatching, this), required_reload(false) {}
+    : watcher(&AssetWatcher::StartWatching, this), required_reload(false),
+      shutdown(false) {}
 
 AssetWatcher::~AssetWatcher() {
     shutdown = true;
