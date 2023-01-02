@@ -8,8 +8,12 @@ int main(int argc, char **argv) {
                             "SFML works!");
     window.setFramerateLimit(60);
 
-    std::optional map_path_optional =
-        argc == 2 ? std::optional<std::string>{argv[1]} : std::nullopt;
+    auto map_path_optional = [&]() -> std::optional<std::string> {
+        if (argc == 2)
+            return {argv[1]};
+
+        return {};
+    }();
 
     auto current_scene = HouseSceneFactory::Init(
         window_height, 
